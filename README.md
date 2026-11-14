@@ -40,6 +40,7 @@ Projeto acadêmico desenvolvido para a disciplina de **Projeto de Software** (Ce
 
 ## Documentação e Modelagem
 
+- [Marco intermediário](./docs/marco_intermediario.md): síntese dos oito entregáveis, roteiro de demonstração e commits.
 - [Requisitos do incremento](./docs/requisitos.md): escopo, critérios de aceite e limites da versão demonstrável.
 - [Arquitetura](./docs/arquitetura.md): componentes implementados, restrições, execução e manutenção futura.
 - [Modelo OO e UML](./docs/uml.md): cinco classes centrais, atributos, operações, relacionamentos e regras do domínio.
