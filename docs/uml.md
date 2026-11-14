@@ -85,3 +85,9 @@ classDiagram
 - A abertura cria o primeiro registro de histórico (`Aberta`). Cada mudança aceita acrescenta status, instante ISO e responsável.
 - Transições válidas: `Aberta` → `Em Análise` → `Em Execução` → `Concluída`; cancelamento é possível antes da conclusão. OS concluída ou cancelada é terminal neste incremento.
 - `Em Análise` não aceita lançamento de mão de obra; a regra atual segue os requisitos RF-05 (`Aberta` ou `Em Execução`).
+
+## Mudança futura provável e tipo de manutenção
+
+Uma evolução provável é permitir que atendentes e mecânicos acessem o sistema em computadores diferentes, compartilhando os mesmos cadastros e ordens de serviço. Para isso, o armazenamento atual em `localStorage` seria substituído por uma API e um banco de dados centralizado, com autenticação e permissões por perfil.
+
+Essa evolução corresponde a **manutenção adaptativa**, pois o sistema precisará se adaptar a um novo ambiente de execução cliente-servidor e ao acesso por múltiplos usuários. Antes do uso com dados reais, também será necessário implementar backups e controles de privacidade.
