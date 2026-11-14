@@ -40,5 +40,18 @@ Projeto acadêmico desenvolvido para a disciplina de **Projeto de Software** (Ce
 
 ## Documentação e Modelagem
 
-- [REQUISITOS.md](./REQUISITOS.md): Requisitos funcionais e não funcionais revisados (E1 corrigido).
-- [PROJETO_ARQUITETURA_E2.md](./docs/PROJETO_ARQUITETURA_E2.md): Detalhamento da arquitetura em 4 blocos, Diagramas UML (Casos de Uso e Classes), interfaces e matriz de riscos.
+- [Requisitos do incremento](./docs/requisitos.md): escopo, critérios de aceite e limites da versão demonstrável.
+- [Arquitetura](./docs/arquitetura.md): componentes implementados, restrições, execução e manutenção futura.
+- [Modelo OO e UML](./docs/uml.md): cinco classes centrais, atributos, operações, relacionamentos e regras do domínio.
+- [Requisitos originais](./REQUISITOS.md): levantamento completo do escopo do projeto.
+- [Planejamento E2](./docs/PROJETO_ARQUITETURA_E2.md): documento de arquitetura e planejamento elaborado no marco anterior.
+
+## Executar o primeiro incremento
+
+Na raiz do projeto, inicie um servidor estático:
+
+```sh
+python3 -m http.server 8000
+```
+
+Abra `http://localhost:8000` no navegador. Não há dependências para instalar; os dados de demonstração são guardados no `localStorage` do navegador atual. Não use dados pessoais reais nesta versão.
