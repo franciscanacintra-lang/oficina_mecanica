@@ -42,11 +42,16 @@ Uma evolução provável é permitir que atendentes e mecânicos usem o sistema 
 
 Adicionar estoque de peças, não previsto no fluxo atual, seria uma ampliação de capacidade e se enquadraria como **manutenção perfectiva**.
 
-## Execução
+## Como executar o incremento
 
 1. Abra a pasta `oficina_mecanica` no VS Code.
-2. No terminal, na raiz do projeto, inicie um servidor estático com `python3 -m http.server 8000`.
-3. Acesse `http://localhost:8000` no navegador. Nenhuma instalação de dependências é necessária.
-4. Os dados ficam no armazenamento local desse navegador. Para iniciar uma demonstração limpa, remova os dados do site nas ferramentas de armazenamento do navegador.
+2. No terminal, vá até a raiz do projeto e execute:
+
+    ```sh
+    python3 -m http.server 8000
+    ```
+
+3. Abra `http://localhost:8000` no navegador. Não é necessário instalar dependências.
+4. Os dados de demonstração ficam no armazenamento local do navegador usado. Para começar de novo, limpe os dados do site nas ferramentas de armazenamento do navegador.
 
 Também é possível abrir `index.html` diretamente, embora servir a pasta por HTTP torne a persistência do navegador mais previsível.
