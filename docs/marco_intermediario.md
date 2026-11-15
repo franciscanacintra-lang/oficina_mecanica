@@ -63,6 +63,8 @@ Depois, abra `http://localhost:8000`. Não é necessário instalar dependências
 | `29cc749` | Implementar painel local de ordens de serviço. |
 | `54d3653` | Destacar mudança futura e manutenção no documento UML. |
 | `c4668c7` | Destacar instruções para executar o incremento. |
+| `e6a9e0e` | Registrar mensagens simuladas no histórico de status da OS. |
+| `7f73f4f` | Classificar integração futura com WhatsApp como manutenção evolutiva. |
 
 ## Documentação relacionada
 
