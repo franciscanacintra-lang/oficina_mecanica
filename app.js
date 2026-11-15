@@ -42,7 +42,7 @@ class OrdemServico {
     this.services.push(new ServicoExecutado(service));
   }
 
-  changeStatus(nextStatus, responsible) {
+  changeStatus(nextStatus, responsible, message) {
     const flow = ['Aberta', 'Em Análise', 'Em Execução', 'Concluída'];
     const currentIndex = flow.indexOf(this.status);
     const validNext = nextStatus === 'Cancelada'
@@ -55,7 +55,7 @@ class OrdemServico {
     }
 
     this.status = nextStatus;
-    this.history.push(new HistoricoStatus({ status: nextStatus, at: new Date().toISOString(), responsible }));
+    this.history.push(new HistoricoStatus({ status: nextStatus, at: new Date().toISOString(), responsible, message }));
   }
 }
 
@@ -214,6 +214,27 @@ function renderSelectedOrder() {
   document.querySelector('#detail-complaint').textContent = order.complaint;
   document.querySelector('#detail-status').textContent = order.status;
 
+  const historyList = document.querySelector('#status-history');
+  historyList.replaceChildren();
+  order.history.forEach((entry) => {
+    const item = document.createElement('li');
+    const heading = document.createElement('div');
+    heading.className = 'history-entry-heading';
+    const status = document.createElement('strong');
+    status.textContent = entry.status;
+    const date = document.createElement('time');
+    date.dateTime = entry.at;
+    date.textContent = new Intl.DateTimeFormat('pt-BR', { dateStyle: 'short', timeStyle: 'short' }).format(new Date(entry.at));
+    const message = document.createElement('p');
+    message.textContent = entry.message || 'Atualização de status registrada.';
+    const responsible = document.createElement('span');
+    responsible.className = 'history-responsible';
+    responsible.textContent = `Responsável: ${entry.responsible || 'não informado'}`;
+    heading.append(status, date);
+    item.append(heading, message, responsible);
+    historyList.append(item);
+  });
+
   const services = document.querySelector('#service-list');
   services.replaceChildren();
   order.services.forEach((service) => {
@@ -293,7 +314,10 @@ document.querySelector('#order-form').addEventListener('submit', (event) => {
   const order = new OrdemServico({
     id: nextId(state.orders), number: nextId(state.orders), vehicleId,
     complaint: values.complaint.trim(), openedAt: new Date().toISOString(), status: 'Aberta',
-    services: [], history: [new HistoricoStatus({ status: 'Aberta', at: new Date().toISOString(), responsible: 'Atendimento' })],
+    services: [], history: [new HistoricoStatus({
+      status: 'Aberta', at: new Date().toISOString(), responsible: 'Atendimento',
+      message: 'A ordem de serviço foi aberta e o veículo deu entrada na oficina.',
+    })],
   });
   state.orders.push(order);
   selectedOrderId = order.id;
@@ -325,10 +349,14 @@ document.querySelector('#status-button').addEventListener('click', () => {
   const order = state.orders.find((item) => item.id === selectedOrderId);
   if (!order) return;
   try {
-    order.changeStatus(document.querySelector('#status-select').value, 'Operador');
+    const nextStatus = document.querySelector('#status-select').value;
+    const vehicle = findVehicle(order.vehicleId);
+    const customer = vehicle && findCustomer(vehicle.customerId);
+    const message = `Olá, ${customer?.name || 'cliente'}. A OS-${String(order.number).padStart(4, '0')} do veículo ${vehicle?.plate || ''} foi atualizada para: ${nextStatus}.`;
+    order.changeStatus(nextStatus, 'Operador', message);
     persist();
     render();
-    showMessage('Status da ordem atualizado.');
+    showMessage('Status atualizado. Mensagem registrada para demonstração; WhatsApp não conectado.');
   } catch (error) {
     showMessage(error.message, true);
   }
