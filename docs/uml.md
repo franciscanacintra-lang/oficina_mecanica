@@ -76,9 +76,9 @@ classDiagram
 - A abertura cria um registro inicial de histórico. Cada mudança de status registra data/hora e mensagem preparada para o cliente.
 - O incremento web atual ainda usa os estados `Aberta`, `Em Análise`, `Em Execução`, `Concluída` e `Cancelada`; o rótulo `Aguardando Inspeção`, `Em Reparo` e `Pronto` do exemplo precisa ser decidido antes de alterar o fluxo implementado.
 
-## Correspondência com o incremento implementado
+## Correspondência com os incrementos implementados
 
-Este UML é o modelo conceitual atualizado solicitado. O protótipo em `app.js` ainda não implementa todas as seis classes: possui `Cliente`, `Veiculo`, `OrdemServico`, `ServicoExecutado` e `HistoricoStatus`; `ServicoExecutado` desempenha papel semelhante ao futuro `ItemServico`, mas a classe `Mecanico`, seu cadastro e a associação direta do mecânico à OS ainda não foram implementados. As operações de cadastro também estão nos eventos da interface, e não como métodos nas classes. Essa diferença deve ser considerada ao apresentar o primeiro incremento, para não afirmar que o código já implementa integralmente o modelo.
+Este UML é o modelo conceitual de seis classes. O MVP de terminal `sistema_oficina.py`, correspondente à tag `v1.0-mvp` da Maria, implementa `OrdemServico` e `HistoricoStatus`. O painel web em `app.js` implementa `Cliente`, `Veiculo`, `OrdemServico`, `ServicoExecutado` e `HistoricoStatus`; `ServicoExecutado` desempenha papel semelhante a `ItemServico`. Nenhuma das duas versões implementa ainda a classe `Mecanico`, seu cadastro e a associação por matrícula à OS. As operações de cadastro do painel web são tratadas por eventos da interface, e não como métodos nas classes. Portanto, o diagrama descreve o modelo do projeto, não uma afirmação de que todas as classes já estão codificadas.
 
 ## Mudança futura provável e tipo de manutenção
 

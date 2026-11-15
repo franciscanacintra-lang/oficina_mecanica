@@ -2,7 +2,7 @@
 
 ## Visão geral
 
-O incremento é uma aplicação web estática, executada no navegador e sem etapa de compilação ou dependências de pacote. A separação lógica segue apresentação, domínio e persistência; nesta prova de conceito, a interface e os objetos de domínio ainda compartilham o arquivo `app.js`.
+O repositório contém duas formas de demonstrar o incremento: o MVP de terminal em `sistema_oficina.py`, correspondente à versão `v1.0-mvp` da Maria, e o painel web complementar em HTML, CSS e JavaScript. O exemplo Python mantém a OS e seu histórico em memória durante a execução; o painel web persiste seus próprios dados no `localStorage` do navegador.
 
 ```mermaid
 flowchart LR
@@ -19,6 +19,7 @@ flowchart LR
 | Apresentação | `index.html`, `styles.css` | Formulários, fila de OS, resumo, detalhes e consulta. |
 | Controle e domínio | `app.js` | Validação, criação dos objetos, regras de status, cálculo e atualização da interface. |
 | Persistência | `localStorage` | Guardar clientes, veículos e ordens em formato JSON no navegador atual. |
+| Demonstração de terminal | `sistema_oficina.py` | Criar uma OS de exemplo, simular atualizações e exibir o histórico no console. |
 
 ## Fluxo principal
 
@@ -36,6 +37,7 @@ flowchart LR
 - A busca de acompanhamento é uma demonstração local. Ela não autentica o cliente nem restringe quais OS podem ser consultadas.
 - O histórico registra as transições na aplicação, mas não é imutável nem resistente a edição pelo usuário do navegador.
 - Cada transição registra uma mensagem preparada para o cliente e a apresenta como simulação; não existe envio de mensagem por WhatsApp ou outro canal externo.
+- A demonstração Python reproduz os estados `Aguardando Inspeção`, `Em Reparo` e `Pronto` do MVP `v1.0-mvp`; o painel web segue os estados especificados no fluxo revisado. Os exemplos são coerentes com o mesmo objetivo, mas usam vocabulários de status diferentes.
 
 ## Mudança futura e manutenção
 
@@ -45,14 +47,24 @@ Adicionar estoque de peças, não previsto no fluxo atual, seria uma ampliação
 
 ## Como executar o incremento
 
+### MVP de terminal (Python)
+
 1. Abra a pasta `oficina_mecanica` no VS Code.
-2. No terminal, vá até a raiz do projeto e execute:
+2. Com Python 3 instalado, execute na raiz:
+
+    ```sh
+    python3 sistema_oficina.py
+    ```
+
+### Painel web complementar
+
+1. No terminal, na raiz do projeto, execute:
 
     ```sh
     python3 -m http.server 8000
     ```
 
-3. Abra `http://localhost:8000` no navegador. Não é necessário instalar dependências.
-4. Os dados de demonstração ficam no armazenamento local do navegador usado. Para começar de novo, limpe os dados do site nas ferramentas de armazenamento do navegador.
+2. Abra `http://localhost:8000` no navegador. Não é necessário instalar dependências.
+3. Os dados de demonstração do painel web ficam no armazenamento local do navegador usado. Para começar de novo, limpe os dados do site nas ferramentas de armazenamento do navegador.
 
 Também é possível abrir `index.html` diretamente, embora servir a pasta por HTTP torne a persistência do navegador mais previsível.
