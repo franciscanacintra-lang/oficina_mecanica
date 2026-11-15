@@ -35,10 +35,11 @@ flowchart LR
 - O `localStorage` é adequado apenas à demonstração: não oferece transações, controle multiusuário, sincronização ou backup.
 - A busca de acompanhamento é uma demonstração local. Ela não autentica o cliente nem restringe quais OS podem ser consultadas.
 - O histórico registra as transições na aplicação, mas não é imutável nem resistente a edição pelo usuário do navegador.
+- Cada transição registra uma mensagem preparada para o cliente e a apresenta como simulação; não existe envio de mensagem por WhatsApp ou outro canal externo.
 
 ## Mudança futura e manutenção
 
-Uma evolução provável é permitir que atendentes e mecânicos usem o sistema em diferentes computadores, mantendo uma base compartilhada e acesso autenticado. A migração do armazenamento local para uma API e um banco relacional, junto com a adaptação da aplicação ao ambiente cliente-servidor, caracteriza **manutenção adaptativa**. Nessa mudança, os dados pessoais também exigirão autenticação, autorização por perfil, backups e política de privacidade antes de uso real.
+Uma evolução provável é integrar o sistema à API oficial do WhatsApp para enviar automaticamente ao cliente uma mensagem sempre que o status da OS mudar, sem depender de consulta manual ao painel. A integração deve prever consentimento do cliente, segurança das credenciais, tratamento de falhas e registro do resultado do envio. Essa ampliação de capacidade caracteriza **manutenção evolutiva**, pois acrescenta uma funcionalidade ao sistema sem corrigir um defeito existente.
 
 Adicionar estoque de peças, não previsto no fluxo atual, seria uma ampliação de capacidade e se enquadraria como **manutenção perfectiva**.
 

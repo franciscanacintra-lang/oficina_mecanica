@@ -18,8 +18,8 @@ Apresentar o modelo orientado a objetos, a arquitetura do primeiro incremento, u
 | 1. Classes centrais | Cinco classes de domínio: `Cliente`, `Veiculo`, `OrdemServico`, `ServicoExecutado` e `HistoricoStatus`. | [Modelo OO e UML](uml.md), seção “Classes centrais”. |
 | 2. Atributos, operações e relacionamentos | Tabela de atributos e operações, responsabilidades e regras de associação/composição. | [Modelo OO e UML](uml.md). |
 | 3. Diagrama de classes | Diagrama UML em Mermaid, incluindo as classes e enumeração `StatusOS`. | [Modelo OO e UML](uml.md), seção “Diagrama de classes”. |
-| 4. Mudança futura e manutenção | Compartilhar dados entre estações, substituindo `localStorage` por API e banco central; classificada como manutenção adaptativa. | [Modelo OO e UML](uml.md) e [Arquitetura](arquitetura.md). |
-| 5. Primeiro incremento funcional | Cadastro de cliente/veículo, abertura e consulta de OS, lançamento de mão de obra, cálculo do total e transições de status com histórico. | [Aplicação](../index.html), [JavaScript](../app.js) e critérios em [requisitos](requisitos.md). |
+| 4. Mudança futura e manutenção | Enviar automaticamente atualizações de status pela API oficial do WhatsApp; classificada como manutenção evolutiva. | [Modelo OO e UML](uml.md) e [Arquitetura](arquitetura.md). |
+| 5. Primeiro incremento funcional | Cadastro de cliente/veículo, abertura e consulta de OS, lançamento de mão de obra, cálculo do total e mensagens simuladas no histórico de status. | [Aplicação](../index.html), [JavaScript](../app.js) e critérios em [requisitos](requisitos.md). |
 | 6. Instruções para executar | Servidor estático local, sem instalação de dependências. | [Arquitetura](arquitetura.md), seção “Como executar o incremento”. |
 | 7. Histórico Git | Commits separados para documentação, funcionalidade e ajustes posteriores. | Histórico listado abaixo; consultar também `git log --oneline`. |
 | 8. Preparação do marco | Este documento reúne escopo, evidências, limites e roteiro de demonstração. | Este arquivo e links para os documentos detalhados. |
@@ -53,7 +53,7 @@ Depois, abra `http://localhost:8000`. Não é necessário instalar dependências
 3. Abrir uma ordem e apontar o número e status inicial na fila.
 4. Lançar um serviço e mostrar o valor total atualizado.
 5. Avançar o status e consultar a OS por número ou placa.
-6. Abrir [uml.md](uml.md) para apresentar as classes, relações e a mudança futura classificada como manutenção adaptativa.
+6. Abrir [uml.md](uml.md) para apresentar as classes, relações e a integração futura com WhatsApp classificada como manutenção evolutiva.
 
 ## Histórico de commits
 

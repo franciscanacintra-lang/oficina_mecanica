@@ -10,7 +10,7 @@ O modelo deste incremento possui cinco classes. Identificadores são numéricos;
 | `Veiculo` | `id`, `plate`, `brand`, `model`, `year`, `color`, `customerId` | `constructor(data)` | Identifica o veículo e referencia seu proprietário. |
 | `OrdemServico` | `id`, `number`, `vehicleId`, `complaint`, `openedAt`, `status`, `services`, `history` | `total`, `addService(service)`, `changeStatus(nextStatus, responsible)` | Mantém o atendimento, valida regras de operação, calcula total e muda status. |
 | `ServicoExecutado` | `id`, `description`, `mechanic`, `price` | `constructor(data)` | Registra um item de mão de obra e seu responsável. |
-| `HistoricoStatus` | `status`, `at`, `responsible` | `constructor(data)` | Registra cada status alcançado, instante e responsável. |
+| `HistoricoStatus` | `status`, `at`, `responsible`, `message` | `constructor(data)` | Registra status, instante, responsável e texto da atualização preparada para o cliente. |
 
 `services` e `history` são coleções pertencentes à OS. O total não é persistido como campo independente: é calculado somando `price` dos serviços, evitando divergência entre itens e total.
 
@@ -59,6 +59,7 @@ classDiagram
         +string status
         +datetime at
         +string responsible
+        +string message
         +constructor(data)
     }
     class StatusOS {
@@ -88,6 +89,6 @@ classDiagram
 
 ## Mudança futura provável e tipo de manutenção
 
-Uma evolução provável é permitir que atendentes e mecânicos acessem o sistema em computadores diferentes, compartilhando os mesmos cadastros e ordens de serviço. Para isso, o armazenamento atual em `localStorage` seria substituído por uma API e um banco de dados centralizado, com autenticação e permissões por perfil.
+Uma evolução provável é integrar o sistema à API oficial do WhatsApp para enviar automaticamente ao cliente uma mensagem quando o status da OS for atualizado, sem exigir que ele consulte o painel. O sistema precisará armazenar o telefone com consentimento, preparar o conteúdo da mensagem, tratar falhas de entrega e proteger as credenciais da integração.
 
-Essa evolução corresponde a **manutenção adaptativa**, pois o sistema precisará se adaptar a um novo ambiente de execução cliente-servidor e ao acesso por múltiplos usuários. Antes do uso com dados reais, também será necessário implementar backups e controles de privacidade.
+Essa evolução corresponde a **manutenção evolutiva**, pois acrescenta uma capacidade nova ao sistema que já atende ao fluxo básico: a comunicação automática de atualizações por um canal externo. Não se trata de corrigir um defeito existente. No incremento atual, apenas o texto da mensagem é registrado e mostrado na interface; nenhuma mensagem real é enviada ao WhatsApp.
