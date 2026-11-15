@@ -27,7 +27,7 @@ Registrar clientes e veículos e acompanhar o atendimento da oficina por ordens 
 | RF-02 | Cadastrar veículo associado a um cliente. | Placa única no formato clássico (`ABC1234`) ou Mercosul (`ABC1D23`); marca, modelo, ano e cor são obrigatórios. |
 | RF-03 | Abrir OS para veículo cadastrado. | A aplicação atribui número sequencial, data/hora de abertura, queixa e status inicial `Aberta`. |
 | RF-04 | Consultar e atualizar status da OS. | Transições: `Aberta` → `Em Análise` → `Em Execução` → `Concluída`; é possível cancelar antes da conclusão. Cada alteração registra data/hora e responsável. |
-| RF-05 | Lançar mão de obra na OS. | Cada item contém descrição, mecânico responsável e valor; só pode ser lançado com a OS `Aberta` ou `Em Execução`. |
+| RF-05 | Lançar mão de obra na OS. | Cada item contém descrição e valor; a OS identifica o mecânico responsável. No protótipo atual, o nome do mecânico é informado em cada serviço; o cadastro e a associação por matrícula previstos no UML ficam para o próximo incremento. |
 | RF-06 | Calcular o total da OS. | Total exibido corresponde à soma dos serviços, atualizada após cada lançamento. |
 | RF-07 | Acompanhar a operação e localizar uma OS. | Painel resume ordens abertas, em execução e concluídas; busca aceita número da OS ou placa. |
 | RF-08 | Preparar uma atualização para o cliente quando o status mudar. | A mensagem simulada, o status, a data/hora e o responsável ficam registrados no histórico da OS. |

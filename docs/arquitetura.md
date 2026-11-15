@@ -31,7 +31,7 @@ flowchart LR
 ## Decisões e restrições
 
 - HTML, CSS e JavaScript nativos mantêm o incremento simples de executar e revisar, sem servidor de aplicação.
-- O modelo de domínio contém `Cliente`, `Veiculo`, `OrdemServico`, `ServicoExecutado` e `HistoricoStatus`; o detalhamento está em [uml.md](uml.md).
+- O modelo conceitual contém as seis classes `Cliente`, `Veiculo`, `Mecanico`, `OrdemServico`, `ItemServico` e `HistoricoStatus`; o protótipo ainda implementa cinco classes, conforme a observação de correspondência em [uml.md](uml.md).
 - O `localStorage` é adequado apenas à demonstração: não oferece transações, controle multiusuário, sincronização ou backup.
 - A busca de acompanhamento é uma demonstração local. Ela não autentica o cliente nem restringe quais OS podem ser consultadas.
 - O histórico registra as transições na aplicação, mas não é imutável nem resistente a edição pelo usuário do navegador.

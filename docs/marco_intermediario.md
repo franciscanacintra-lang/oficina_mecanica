@@ -15,7 +15,7 @@ Apresentar o modelo orientado a objetos, a arquitetura do primeiro incremento, u
 
 | Item | Entrega | Evidência no projeto |
 |---|---|---|
-| 1. Classes centrais | Cinco classes de domínio: `Cliente`, `Veiculo`, `OrdemServico`, `ServicoExecutado` e `HistoricoStatus`. | [Modelo OO e UML](uml.md), seção “Classes centrais”. |
+| 1. Classes centrais | Seis classes conceituais: `Cliente`, `Veiculo`, `Mecanico`, `OrdemServico`, `ItemServico` e `HistoricoStatus`. O incremento ainda não implementa todas elas no código. | [Modelo OO e UML](uml.md), seções “Classes centrais” e “Correspondência com o incremento implementado”. |
 | 2. Atributos, operações e relacionamentos | Tabela de atributos e operações, responsabilidades e regras de associação/composição. | [Modelo OO e UML](uml.md). |
 | 3. Diagrama de classes | Diagrama UML em Mermaid, incluindo as classes e enumeração `StatusOS`. | [Modelo OO e UML](uml.md), seção “Diagrama de classes”. |
 | 4. Mudança futura e manutenção | Enviar automaticamente atualizações de status pela API oficial do WhatsApp; classificada como manutenção evolutiva. | [Modelo OO e UML](uml.md) e [Arquitetura](arquitetura.md). |

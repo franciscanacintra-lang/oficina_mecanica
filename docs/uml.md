@@ -2,90 +2,83 @@
 
 ## Classes centrais
 
-O modelo deste incremento possui cinco classes. Identificadores são numéricos; CPF/CNPJ e placa são armazenados como texto para preservar formatação e zeros à esquerda. Valores de mão de obra são números decimais em reais.
+O modelo conceitual fornecido para o projeto contém seis classes. CPF, placa e matrícula são textos para preservar zeros à esquerda e formatos alfanuméricos. O valor total é monetário; na implementação, deve ser calculado a partir dos itens da OS para evitar divergência.
 
 | Classe | Atributos | Operações | Responsabilidade |
 |---|---|---|---|
-| `Cliente` | `id`, `name`, `document`, `phone` | `constructor(data)` | Representa a pessoa vinculada aos veículos. |
-| `Veiculo` | `id`, `plate`, `brand`, `model`, `year`, `color`, `customerId` | `constructor(data)` | Identifica o veículo e referencia seu proprietário. |
-| `OrdemServico` | `id`, `number`, `vehicleId`, `complaint`, `openedAt`, `status`, `services`, `history` | `total`, `addService(service)`, `changeStatus(nextStatus, responsible)` | Mantém o atendimento, valida regras de operação, calcula total e muda status. |
-| `ServicoExecutado` | `id`, `description`, `mechanic`, `price` | `constructor(data)` | Registra um item de mão de obra e seu responsável. |
-| `HistoricoStatus` | `status`, `at`, `responsible`, `message` | `constructor(data)` | Registra status, instante, responsável e texto da atualização preparada para o cliente. |
-
-`services` e `history` são coleções pertencentes à OS. O total não é persistido como campo independente: é calculado somando `price` dos serviços, evitando divergência entre itens e total.
+| `Cliente` | `cpf: String`, `nome: String`, `telefone: String` | `cadastrar()`, `atualizarDados()` | Representa o proprietário e contato para atualizações do serviço. |
+| `Veiculo` | `placa: String`, `modelo: String`, `ano: Int` | `registrarVeiculo()` | Representa o veículo vinculado ao cliente e atendido pela oficina. |
+| `Mecanico` | `matricula: String`, `nome: String`, `especialidade: String` | `cadastrar()` | Representa o profissional responsável pela OS. |
+| `OrdemServico` | `numeroOS: Int`, `statusAtual: String`, `valorTotal: Float` | `abrirOS()`, `atualizarStatus()`, `fecharOS()` | Associa cliente, veículo e mecânico, e coordena itens e histórico do atendimento. |
+| `ItemServico` | `codigoServico: Int`, `descricao: String`, `valor: Float` | `adicionarItem()`, `removerItem()` | Representa cada serviço executado e compõe o total da OS. |
+| `HistoricoStatus` | `dataHora: DateTime`, `statusNovo: String`, `mensagemEnviada: String` | `registrarMudanca()` | Mantém a linha do tempo e a mensagem preparada para comunicar a mudança ao cliente. |
 
 ## Diagrama de classes
+
+O diagrama mantém as seis classes e operações do UML recebido. As associações mostram que toda OS está ligada a exatamente um cliente, veículo e mecânico. A multiplicidade `0..*` do outro lado permite cadastrar clientes, veículos e mecânicos antes de haver uma OS. Uma OS pode ser aberta antes de itens de serviço serem lançados, por isso a composição com `ItemServico` inicia em zero.
 
 ```mermaid
 classDiagram
     class Cliente {
-        +number id
-        +string name
-        +string document
-        +string phone
-        +constructor(data)
+        +String cpf
+        +String nome
+        +String telefone
+        +cadastrar()
+        +atualizarDados()
     }
     class Veiculo {
-        +number id
-        +string plate
-        +string brand
-        +string model
-        +number year
-        +string color
-        +number customerId
-        +constructor(data)
+        +String placa
+        +String modelo
+        +Int ano
+        +registrarVeiculo()
+    }
+    class Mecanico {
+        +String matricula
+        +String nome
+        +String especialidade
+        +cadastrar()
     }
     class OrdemServico {
-        +number id
-        +number number
-        +number vehicleId
-        +string complaint
-        +datetime openedAt
-        +string status
-        +ServicoExecutado[] services
-        +HistoricoStatus[] history
-        +number total
-        +addService(service)
-        +changeStatus(nextStatus, responsible)
+        +Int numeroOS
+        +String statusAtual
+        +Float valorTotal
+        +abrirOS()
+        +atualizarStatus()
+        +fecharOS()
     }
-    class ServicoExecutado {
-        +number id
-        +string description
-        +string mechanic
-        +number price
-        +constructor(data)
+    class ItemServico {
+        +Int codigoServico
+        +String descricao
+        +Float valor
+        +adicionarItem()
+        +removerItem()
     }
     class HistoricoStatus {
-        +string status
-        +datetime at
-        +string responsible
-        +string message
-        +constructor(data)
-    }
-    class StatusOS {
-        <<enumeration>>
-        Aberta
-        Em_Analise
-        Em_Execucao
-        Concluida
-        Cancelada
+        +DateTime dataHora
+        +String statusNovo
+        +String mensagemEnviada
+        +registrarMudanca()
     }
 
     Cliente "1" --> "0..*" Veiculo : possui
-    Veiculo "1" --> "0..*" OrdemServico : recebe
-    OrdemServico "1" *-- "0..*" ServicoExecutado : compoe
-    OrdemServico "1" *-- "1..*" HistoricoStatus : registra
-    OrdemServico ..> StatusOS : utiliza
+    Cliente "1" --> "0..*" OrdemServico : solicita
+    Veiculo "1" --> "0..*" OrdemServico : passa por
+    Mecanico "1" --> "0..*" OrdemServico : executa
+    OrdemServico "1" *-- "0..*" ItemServico : contem
+    OrdemServico "1" *-- "1..*" HistoricoStatus : contem
 ```
 
 ## Regras do domínio
 
-- Um veículo pertence a exatamente um cliente; um cliente pode possuir vários veículos.
-- Uma OS refere-se a exatamente um veículo; um veículo pode ter várias OS ao longo do tempo.
-- Uma OS agrega zero ou mais serviços enquanto está aberta ou em execução. Pode ser concluída somente depois de receber ao menos um serviço.
-- A abertura cria o primeiro registro de histórico (`Aberta`). Cada mudança aceita acrescenta status, instante ISO e responsável.
-- Transições válidas: `Aberta` → `Em Análise` → `Em Execução` → `Concluída`; cancelamento é possível antes da conclusão. OS concluída ou cancelada é terminal neste incremento.
-- `Em Análise` não aceita lançamento de mão de obra; a regra atual segue os requisitos RF-05 (`Aberta` ou `Em Execução`).
+- Cada veículo pertence a um cliente; cliente e veículo podem existir antes da primeira OS.
+- Cada OS referencia exatamente um cliente, um veículo e um mecânico responsável. O cliente associado à OS deve ser o proprietário do veículo selecionado.
+- Uma OS contém zero ou mais itens enquanto está aberta; para fechá-la, deve haver ao menos um item e o total deve corresponder à soma dos valores.
+- A abertura cria um registro inicial de histórico. Cada mudança de status registra data/hora e mensagem preparada para o cliente.
+- O incremento web atual ainda usa os estados `Aberta`, `Em Análise`, `Em Execução`, `Concluída` e `Cancelada`; o rótulo `Aguardando Inspeção`, `Em Reparo` e `Pronto` do exemplo precisa ser decidido antes de alterar o fluxo implementado.
+
+## Correspondência com o incremento implementado
+
+Este UML é o modelo conceitual atualizado solicitado. O protótipo em `app.js` ainda não implementa todas as seis classes: possui `Cliente`, `Veiculo`, `OrdemServico`, `ServicoExecutado` e `HistoricoStatus`; `ServicoExecutado` desempenha papel semelhante ao futuro `ItemServico`, mas a classe `Mecanico`, seu cadastro e a associação direta do mecânico à OS ainda não foram implementados. As operações de cadastro também estão nos eventos da interface, e não como métodos nas classes. Essa diferença deve ser considerada ao apresentar o primeiro incremento, para não afirmar que o código já implementa integralmente o modelo.
 
 ## Mudança futura provável e tipo de manutenção
 
