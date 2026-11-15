@@ -59,6 +59,8 @@ Para abrir o painel web complementar, execute `python3 -m http.server 8000` e ac
 | `c4668c7` | Destacar instruções para executar o incremento. |
 | `e6a9e0e` | Registrar mensagens simuladas no histórico de status da OS. |
 | `7f73f4f` | Classificar integração futura com WhatsApp como manutenção evolutiva. |
+| `f28a53a` | Adicionar o MVP Python de controle de status compatível com a tag da Maria. |
+| `32cc73a` | Registrar no README e na documentação o alinhamento com o MVP da Maria. |
 
 ## Documentação relacionada
 
