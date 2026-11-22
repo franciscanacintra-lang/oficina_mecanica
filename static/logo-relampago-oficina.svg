@@ -1,17 +1,21 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="96" height="96" viewBox="0 0 96 96" role="img" aria-labelledby="title desc">
-  <title id="title">Contorno de carro com raio</title>
-  <desc id="desc">Contorno original de carro esportivo com símbolo de raio</desc>
+  <title id="title">Contorno de carro esportivo</title>
+  <desc id="desc">Contorno lateral minimalista inspirado em carro esportivo</desc>
   <rect width="96" height="96" rx="20" fill="#202623"/>
 
-  <!-- Contorno lateral simplificado de carro esportivo -->
-  <path d="M10 64C14 53 22 48 34 46L43 35C47 31 53 29 60 30L72 33C77 34 81 38 84 43L88 56L83 66H73C72 58 67 53 60 53C53 53 48 58 47 66H36C35 58 30 53 23 53C16 53 12 58 11 64Z" fill="none" stroke="#F1C84D" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
-  <path d="M43 46L49 36C52 34 55 33 59 34L67 36L72 46Z" fill="none" stroke="#F1C84D" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
-  <circle cx="23" cy="66" r="7" fill="#202623" stroke="#F1C84D" stroke-width="3"/>
-  <circle cx="60" cy="66" r="7" fill="#202623" stroke="#F1C84D" stroke-width="3"/>
+  <!-- Contorno lateral inspirado no perfil clássico de Porsche 911 -->
+  <path d="M9 64C12 55 18 50 28 48L36 45C40 38 44 32 49 28C53 25 58 24 64 25C70 26 75 31 79 38L84 47C87 49 89 53 89 57V64H80C79 55 74 50 67 50C59 50 54 56 53 64H35C34 56 29 51 22 51C15 51 11 56 10 64Z" fill="none" stroke="#F1C84D" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
 
-  <!-- Raio dentro do contorno -->
-  <path d="M52 18H68L57 36H71L45 64L49 44H36L52 18Z" fill="none" stroke="#B83932" stroke-width="4" stroke-linejoin="round"/>
-  <path d="M52 18H68L57 36H71" fill="none" stroke="#F1C84D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  <!-- Linha do vidro e da lateral -->
+  <path d="M42 44L48 34C51 30 55 28 60 29C65 30 69 34 72 40L74 44H42Z" fill="none" stroke="#F1C84D" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M57 29V44M37 45H78" fill="none" stroke="#F1C84D" stroke-width="2.5" stroke-linecap="round"/>
 
-  <path d="M14 55H8M17 47H10" fill="none" stroke="#F1C84D" stroke-width="3" stroke-linecap="round"/>
+  <!-- Rodas -->
+  <circle cx="22" cy="64" r="8" fill="#202623" stroke="#F1C84D" stroke-width="3"/>
+  <circle cx="67" cy="64" r="8" fill="#202623" stroke="#F1C84D" stroke-width="3"/>
+  <circle cx="22" cy="64" r="3" fill="#F1C84D"/>
+  <circle cx="67" cy="64" r="3" fill="#F1C84D"/>
+
+  <!-- Detalhes mínimos -->
+  <path d="M82 53H89M14 55H8" fill="none" stroke="#B83932" stroke-width="3" stroke-linecap="round"/>
 </svg>
