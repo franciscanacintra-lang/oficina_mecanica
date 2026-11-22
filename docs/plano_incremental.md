@@ -47,7 +47,17 @@ O modelo incremental é mais adequado que o cascata porque o MVP já foi revisad
 - CHANGELOG e evidências de release.
 - Critério de aceite: testes executados sem falha e documentação alinhada ao código.
 
-### Incremento 5 — Produção futura
+### Incremento 5 — Testes, segurança e release final
+
+- Plano de testes unitário, integração, sistema e aceitação.
+- Evidências das execuções e capturas de demonstração.
+- Registro de bugs encontrados e correções aplicadas.
+- Atualização da documentação após correções.
+- Análise básica de segurança e riscos residuais.
+- CHANGELOG da versão final.
+- Tag `v1.0-final` e preparação da defesa.
+
+### Incremento 6 — Produção futura
 
 - Migrar `localStorage` para API e banco relacional.
 - Criar entidade Mecânico e associá-la à OS.
