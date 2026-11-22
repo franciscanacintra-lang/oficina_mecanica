@@ -1,9 +1,17 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="96" height="96" viewBox="0 0 96 96" role="img" aria-labelledby="title desc">
-  <title id="title">Símbolo de raio da oficina</title>
-  <desc id="desc">Contorno amarelo e vermelho em forma de raio estilizado</desc>
+  <title id="title">Contorno de carro com raio</title>
+  <desc id="desc">Contorno original de carro esportivo com símbolo de raio</desc>
   <rect width="96" height="96" rx="20" fill="#202623"/>
-  <path d="M50 12H70L55 39H73L38 84L43 51H25L50 12Z" fill="none" stroke="#F1C84D" stroke-width="7" stroke-linejoin="round"/>
-  <path d="M43 51H25L50 12H70L55 39H73" fill="none" stroke="#B83932" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
-  <path d="M17 68h19M12 77h14" fill="none" stroke="#F1C84D" stroke-width="4" stroke-linecap="round"/>
-  <circle cx="69" cy="75" r="5" fill="#F1C84D"/>
+
+  <!-- Contorno lateral simplificado de carro esportivo -->
+  <path d="M10 64C14 53 22 48 34 46L43 35C47 31 53 29 60 30L72 33C77 34 81 38 84 43L88 56L83 66H73C72 58 67 53 60 53C53 53 48 58 47 66H36C35 58 30 53 23 53C16 53 12 58 11 64Z" fill="none" stroke="#F1C84D" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M43 46L49 36C52 34 55 33 59 34L67 36L72 46Z" fill="none" stroke="#F1C84D" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="23" cy="66" r="7" fill="#202623" stroke="#F1C84D" stroke-width="3"/>
+  <circle cx="60" cy="66" r="7" fill="#202623" stroke="#F1C84D" stroke-width="3"/>
+
+  <!-- Raio dentro do contorno -->
+  <path d="M52 18H68L57 36H71L45 64L49 44H36L52 18Z" fill="none" stroke="#B83932" stroke-width="4" stroke-linejoin="round"/>
+  <path d="M52 18H68L57 36H71" fill="none" stroke="#F1C84D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <path d="M14 55H8M17 47H10" fill="none" stroke="#F1C84D" stroke-width="3" stroke-linecap="round"/>
 </svg>
