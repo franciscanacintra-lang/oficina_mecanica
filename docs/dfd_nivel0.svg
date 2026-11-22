@@ -11,14 +11,12 @@
     </g>
 
     <g id="processos">
-      <rect x="390" y="105" width="210" height="85" rx="105" fill="#fff4d6" stroke="#b26a00" stroke-width="2"/><text x="495" y="145" text-anchor="middle" font-weight="bold">1.0</text><text x="495" y="170" text-anchor="middle">Gerenciar clientes</text><text x="495" y="190" text-anchor="middle">e veículos</text>
-      <rect x="390" y="245" width="210" height="85" rx="105" fill="#fff4d6" stroke="#b26a00" stroke-width="2"/><text x="495" y="285" text-anchor="middle" font-weight="bold">2.0</text><text x="495" y="310" text-anchor="middle">Gerenciar ordens</text><text x="495" y="330" text-anchor="middle">de serviço</text>
-      <rect x="390" y="385" width="210" height="85" rx="105" fill="#fff4d6" stroke="#b26a00" stroke-width="2"/><text x="495" y="425" text-anchor="middle" font-weight="bold">3.0</text><text x="495" y="450" text-anchor="middle">Registrar itens</text><text x="495" y="470" text-anchor="middle">de serviço</text>
-      <rect x="390" y="525" width="210" height="85" rx="105" fill="#fff4d6" stroke="#b26a00" stroke-width="2"/><text x="495" y="565" text-anchor="middle" font-weight="bold">4.0</text><text x="495" y="590" text-anchor="middle">Atualizar ciclo</text><text x="495" y="610" text-anchor="middle">de vida da OS</text>
-      <rect x="390" y="665" width="210" height="85" rx="105" fill="#fff4d6" stroke="#b26a00" stroke-width="2"/><text x="495" y="705" text-anchor="middle" font-weight="bold">5.0</text><text x="495" y="730" text-anchor="middle">Consultar andamento</text><text x="495" y="750" text-anchor="middle">da OS</text>
-      <rect x="390" y="805" width="210" height="85" rx="105" fill="#fff4d6" stroke="#b26a00" stroke-width="2"/><text x="495" y="845" text-anchor="middle" font-weight="bold">6.0</text><text x="495" y="870" text-anchor="middle">Gerar painel e</text><text x="495" y="890" text-anchor="middle">indicadores</text>
-
-      <rect x="800" y="805" width="210" height="85" rx="105" fill="#fff4d6" stroke="#b26a00" stroke-width="2"/><text x="905" y="845" text-anchor="middle" font-weight="bold">6.0</text><text x="905" y="870" text-anchor="middle">Painel consolidado</text><text x="905" y="890" text-anchor="middle">e métricas</text>
+      <rect x="390" y="105" width="210" height="85" rx="105" fill="#fff4d6" stroke="#b26a00" stroke-width="2"/><text x="495" y="139" text-anchor="middle" font-size="16" font-weight="bold">1.0 Gerenciar clientes</text><text x="495" y="162" text-anchor="middle" font-size="16">e veículos</text>
+      <rect x="390" y="245" width="210" height="85" rx="105" fill="#fff4d6" stroke="#b26a00" stroke-width="2"/><text x="495" y="279" text-anchor="middle" font-size="16" font-weight="bold">2.0 Gerenciar ordens</text><text x="495" y="302" text-anchor="middle" font-size="16">de serviço</text>
+      <rect x="390" y="385" width="210" height="85" rx="105" fill="#fff4d6" stroke="#b26a00" stroke-width="2"/><text x="495" y="419" text-anchor="middle" font-size="16" font-weight="bold">3.0 Registrar itens</text><text x="495" y="442" text-anchor="middle" font-size="16">de serviço</text>
+      <rect x="390" y="525" width="210" height="85" rx="105" fill="#fff4d6" stroke="#b26a00" stroke-width="2"/><text x="495" y="559" text-anchor="middle" font-size="16" font-weight="bold">4.0 Atualizar ciclo</text><text x="495" y="582" text-anchor="middle" font-size="16">de vida da OS</text>
+      <rect x="390" y="665" width="210" height="85" rx="105" fill="#fff4d6" stroke="#b26a00" stroke-width="2"/><text x="495" y="699" text-anchor="middle" font-size="16" font-weight="bold">5.0 Consultar</text><text x="495" y="722" text-anchor="middle" font-size="16">andamento da OS</text>
+      <rect x="390" y="805" width="210" height="85" rx="105" fill="#fff4d6" stroke="#b26a00" stroke-width="2"/><text x="495" y="839" text-anchor="middle" font-size="16" font-weight="bold">6.0 Gerar painel</text><text x="495" y="862" text-anchor="middle" font-size="16">e indicadores</text>
     </g>
 
     <g id="arquivos">
