@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="96" height="96" viewBox="0 0 96 96" role="img" aria-labelledby="title desc">
+  <title id="title">Logotipo Oficina em Velocidade</title>
+  <desc id="desc">Símbolo original de oficina com carro estilizado e raios de velocidade</desc>
+  <rect width="96" height="96" rx="20" fill="#202623"/>
+  <path d="M15 58h53l9-11H45l-8-10H21l-6 21z" fill="#B83932"/>
+  <path d="M21 58h56l-6 8H20l1-8z" fill="#F1C84D"/>
+  <circle cx="31" cy="66" r="8" fill="#111" stroke="#F3F5F2" stroke-width="3"/>
+  <circle cx="67" cy="66" r="8" fill="#111" stroke="#F3F5F2" stroke-width="3"/>
+  <path d="M46 24h10l-8 14h11L45 62l4-17H38l8-21z" fill="#F1C84D"/>
+  <path d="M10 43h20" stroke="#F1C84D" stroke-width="4" stroke-linecap="round"/>
+  <path d="M8 51h17" stroke="#F1C84D" stroke-width="3" stroke-linecap="round"/>
+  <path d="M62 29l12-7" stroke="#F1C84D" stroke-width="3" stroke-linecap="round"/>
+</svg>
