@@ -38,3 +38,14 @@ flowchart LR
 ## Limites do contexto
 
 Os perfis não possuem autenticação nesta implementação. O cliente possui uma consulta demonstrativa por OS ou placa e não recebe restrição formal por perfil. O disparo real por WhatsApp está fora do escopo; o sistema apenas prepara e registra uma mensagem simulada.
+
+## Versão gráfica para o relatório
+
+A imagem [diagrama_contexto.svg](diagrama_contexto.svg) representa a mesma fronteira do sistema em formato gráfico.
+
+No LibreOffice Writer:
+
+1. Clique em **Inserir → Imagem → A partir de arquivo**.
+2. Selecione `docs/diagrama_contexto.svg`.
+3. Ajuste a largura mantendo a proporção.
+4. Use a legenda: `Figura — Diagrama de contexto do Sistema Oficina Mecânica`.
