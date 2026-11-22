@@ -46,6 +46,8 @@ API, autenticação por perfil, banco relacional, backup e proteção da consult
 - [DFD nível 0](./docs/dfd_nivel0.md): processos principais, armazenamentos e fluxos de dados.
 - [Dicionário de dados](./docs/dicionario_dados.md): itens relevantes, formatos, origem e validações.
 - [Relatório de ajustes](./docs/relatorio_ajustes.md): comparação DFD/DD, divergências e correções.
+- [Planejamento incremental](./docs/plano_incremental.md): modelo de processo, releases e organização de branches.
+- [CHANGELOG](./CHANGELOG.md): histórico de versões, melhorias e correções.
 - [Requisitos originais](./REQUISITOS.md): levantamento completo do escopo do projeto.
 - [Planejamento E2](./docs/PROJETO_ARQUITETURA_E2.md): documento de arquitetura e planejamento elaborado no marco anterior.
 
@@ -66,3 +68,13 @@ python3 -m http.server 8000
 ```
 
 Abra `http://localhost:8000` no navegador. Não há dependências para instalar; os dados de demonstração são guardados no `localStorage` do navegador atual. Não use dados pessoais reais nesta versão.
+
+## Executar testes do incremento Python
+
+Na raiz do projeto:
+
+```sh
+python3 -m unittest discover -s tests -v
+```
+
+Os testes verificam a abertura da OS, o histórico inicial, a sequência de atualizações e o formato da data/hora.
