@@ -65,3 +65,12 @@ flowchart LR
 4. Mecânico solicita status permitido → processo 4.0 → D5.
 5. Cliente informa número ou placa → processo 5.0 consulta D1/D2/D3/D5.
 6. Gestor solicita indicadores → processo 6.0 soma D3/D4.
+
+## Versão gráfica para o relatório
+
+A imagem [dfd_nivel0.svg](dfd_nivel0.svg) apresenta o mesmo DFD em formato gráfico. No LibreOffice Writer:
+
+1. Clique em **Inserir → Imagem → A partir de arquivo**.
+2. Selecione `docs/dfd_nivel0.svg`.
+3. Ajuste a largura no relatório mantendo a proporção.
+4. Use a legenda abaixo da imagem: `Figura — DFD de nível 0 do Sistema Oficina Mecânica`.
