@@ -46,6 +46,6 @@ A imagem [diagrama_contexto.svg](diagrama_contexto.svg) representa a mesma front
 No LibreOffice Writer:
 
 1. Clique em **Inserir → Imagem → A partir de arquivo**.
-2. Selecione `docs/diagrama_contexto.svg`.
+2. Selecione `docs/analise-dados/diagrama_contexto.svg`.
 3. Ajuste a largura mantendo a proporção.
 4. Use a legenda: `Figura — Diagrama de contexto do Sistema Oficina Mecânica`.

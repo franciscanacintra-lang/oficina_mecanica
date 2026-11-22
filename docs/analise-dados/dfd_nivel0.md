@@ -71,6 +71,6 @@ flowchart LR
 A imagem [dfd_nivel0.svg](dfd_nivel0.svg) apresenta o mesmo DFD em formato gráfico. No LibreOffice Writer:
 
 1. Clique em **Inserir → Imagem → A partir de arquivo**.
-2. Selecione `docs/dfd_nivel0.svg`.
+2. Selecione `docs/analise-dados/dfd_nivel0.svg`.
 3. Ajuste a largura no relatório mantendo a proporção.
 4. Use a legenda abaixo da imagem: `Figura — DFD de nível 0 do Sistema Oficina Mecânica`.

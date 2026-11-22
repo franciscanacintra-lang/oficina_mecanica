@@ -38,23 +38,23 @@ API, autenticação por perfil, banco relacional, backup e proteção da consult
 
 ## Documentação e Modelagem
 
-- [Marco intermediário](./docs/marco_intermediario.md): síntese dos oito entregáveis, roteiro de demonstração e commits.
-- [Requisitos do incremento](./docs/requisitos.md): escopo, critérios de aceite e limites da versão demonstrável.
-- [Arquitetura](./docs/arquitetura.md): componentes implementados, restrições, execução e manutenção futura.
-- [Modelo OO e UML](./docs/uml.md): seis classes conceituais, atributos, operações, relacionamentos e correspondência com o código atual.
-- [Diagrama de contexto](./docs/diagrama_contexto.md): fronteira do sistema e entidades externas.
-- [DFD nível 0](./docs/dfd_nivel0.md): processos principais, armazenamentos e fluxos de dados.
-- [Dicionário de dados](./docs/dicionario_dados.md): itens relevantes, formatos, origem e validações.
-- [Relatório de ajustes](./docs/relatorio_ajustes.md): comparação DFD/DD, divergências e correções.
-- [Planejamento incremental](./docs/plano_incremental.md): modelo de processo, releases e organização de branches.
+- [Marco intermediário](./docs/requisitos/marco_intermediario.md): síntese dos oito entregáveis, roteiro de demonstração e commits.
+- [Requisitos do incremento](./docs/requisitos/requisitos.md): escopo, critérios de aceite e limites da versão demonstrável.
+- [Arquitetura](./docs/modelagem/arquitetura.md): componentes implementados, restrições, execução e manutenção futura.
+- [Modelo OO e UML](./docs/modelagem/uml.md): seis classes conceituais, atributos, operações, relacionamentos e correspondência com o código atual.
+- [Diagrama de contexto](./docs/analise-dados/diagrama_contexto.md): fronteira do sistema e entidades externas.
+- [DFD nível 0](./docs/analise-dados/dfd_nivel0.md): processos principais, armazenamentos e fluxos de dados.
+- [Dicionário de dados](./docs/analise-dados/dicionario_dados.md): itens relevantes, formatos, origem e validações.
+- [Relatório de ajustes](./docs/analise-dados/relatorio_ajustes.md): comparação DFD/DD, divergências e correções.
+- [Planejamento incremental](./docs/processos/plano_incremental.md): modelo de processo, releases e organização de branches.
 - [CHANGELOG](./CHANGELOG.md): histórico de versões, melhorias e correções.
 - [Requisitos originais](./REQUISITOS.md): levantamento completo do escopo do projeto.
-- [Planejamento E2](./docs/PROJETO_ARQUITETURA_E2.md): documento de arquitetura e planejamento elaborado no marco anterior.
-- [Plano de testes](./docs/plano_testes.md): casos unitários, integração, sistema e aceitação.
-- [Bugs e correções](./docs/bugs_correcoes.md): problemas encontrados e tratamentos.
-- [Análise de segurança](./docs/analise_seguranca.md): dados, autenticação, autorização e riscos residuais.
-- [Evidências de testes](./docs/evidencias_testes.md): comandos, resultados e capturas esperadas.
-- [Apresentação e defesa](./docs/apresentacao_defesa.md): roteiro para demonstração final.
+- [Planejamento E2](./docs/modelagem/PROJETO_ARQUITETURA_E2.md): documento de arquitetura e planejamento elaborado no marco anterior.
+- [Plano de testes](./docs/testes/plano_testes.md): casos unitários, integração, sistema e aceitação.
+- [Bugs e correções](./docs/testes/bugs_correcoes.md): problemas encontrados e tratamentos.
+- [Evidências de testes](./docs/testes/evidencias_testes.md): comandos, resultados e capturas esperadas.
+- [Análise de segurança](./docs/seguranca/analise_seguranca.md): dados, autenticação, autorização e riscos residuais.
+- [Apresentação e defesa](./docs/apresentacao/apresentacao_defesa.md): roteiro para demonstração final.
 
 ## Executar o MVP em Python
 
