@@ -29,7 +29,7 @@
 
     <g fill="none" stroke="#333" stroke-width="2" marker-end="url(#arrow)">
       <path d="M245 155 L390 155"/><path d="M245 155 L390 287"/><path d="M245 365 L390 425"/><path d="M245 365 L390 565"/><path d="M245 575 L390 705"/><path d="M1155 575 L600 845"/>
-      <path d="M600 145 L800 140"/><path d="M600 287 L800 260"/><path d="M600 425 L800 380"/><path d="M600 565 L800 620"/><path d="M600 705 L800 500"/><path d="M600 845 L800 845"/>
+      <path d="M600 145 L800 140"/><path d="M600 287 L800 260"/><path d="M600 425 L800 380"/><path d="M600 565 L800 620"/><path d="M600 705 L800 500"/><path d="M600 845 C820 845 980 610 1155 610"/>
     </g>
 
     <g font-family="Arial,sans-serif" font-size="13" fill="#444">
