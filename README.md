@@ -27,23 +27,14 @@ Centralizar informações de clientes, veículos e serviços para facilitar o fl
 
 Nos dois casos, as mensagens são apenas demonstrativas; não há integração real com WhatsApp.
 
-## Arquitetura do Sistema
+## Arquitetura do MVP atual
 
-O projeto adota uma arquitetura em camadas estruturada em 4 blocos principais:
-1. **Frontend (Camada de Apresentação):** interfaces web responsivas para atendimento, oficina e clientes.
-2. **Backend / API (Camada de Controle):** serviços REST responsáveis por autenticação, regras de acesso e rotas.
-3. **Regras de Negócio (Camada de Domínio):** validação de dados, fluxo de status da OS e cálculos operacionais.
-4. **Banco de Dados (Camada de Persistência):** armazenamento relacional garantindo integridade referencial.
+1. **Apresentação:** HTML e CSS, em `index.html` e `styles.css`, com interface responsiva.
+2. **Controle e regras locais:** JavaScript em `app.js`, incluindo validações e máquina de estados da OS.
+3. **Persistência demonstrativa:** `localStorage` do navegador.
+4. **Demonstração Python:** `sistema_oficina.py`, com dados mantidos em memória durante a execução.
 
-## Equipe e Papéis
-
-Projeto acadêmico desenvolvido para a disciplina de **Projeto de Software** (Centro Universitário UFBRA):
-
-- **Franciscana Ribeiro Cintra:** Engenharia de Software, Desenvolvimento Backend e Documentação.
-- **Maria Heloísa Macedo:** Modelagem UML, Desenvolvimento Frontend e Garantia de Qualidade.
-
-**Professor:** Jefferson Brandão  
-**Curso:** Análise e Desenvolvimento de Sistemas (ADS)
+API, autenticação por perfil, banco relacional, backup e proteção da consulta do cliente são requisitos futuros. Eles não estão implementados neste MVP.
 
 ## Documentação e Modelagem
 
@@ -51,6 +42,10 @@ Projeto acadêmico desenvolvido para a disciplina de **Projeto de Software** (Ce
 - [Requisitos do incremento](./docs/requisitos.md): escopo, critérios de aceite e limites da versão demonstrável.
 - [Arquitetura](./docs/arquitetura.md): componentes implementados, restrições, execução e manutenção futura.
 - [Modelo OO e UML](./docs/uml.md): seis classes conceituais, atributos, operações, relacionamentos e correspondência com o código atual.
+- [Diagrama de contexto](./docs/diagrama_contexto.md): fronteira do sistema e entidades externas.
+- [DFD nível 0](./docs/dfd_nivel0.md): processos principais, armazenamentos e fluxos de dados.
+- [Dicionário de dados](./docs/dicionario_dados.md): itens relevantes, formatos, origem e validações.
+- [Relatório de ajustes](./docs/relatorio_ajustes.md): comparação DFD/DD, divergências e correções.
 - [Requisitos originais](./REQUISITOS.md): levantamento completo do escopo do projeto.
 - [Planejamento E2](./docs/PROJETO_ARQUITETURA_E2.md): documento de arquitetura e planejamento elaborado no marco anterior.
 
