@@ -50,6 +50,11 @@ API, autenticação por perfil, banco relacional, backup e proteção da consult
 - [CHANGELOG](./CHANGELOG.md): histórico de versões, melhorias e correções.
 - [Requisitos originais](./REQUISITOS.md): levantamento completo do escopo do projeto.
 - [Planejamento E2](./docs/PROJETO_ARQUITETURA_E2.md): documento de arquitetura e planejamento elaborado no marco anterior.
+- [Plano de testes](./docs/plano_testes.md): casos unitários, integração, sistema e aceitação.
+- [Bugs e correções](./docs/bugs_correcoes.md): problemas encontrados e tratamentos.
+- [Análise de segurança](./docs/analise_seguranca.md): dados, autenticação, autorização e riscos residuais.
+- [Evidências de testes](./docs/evidencias_testes.md): comandos, resultados e capturas esperadas.
+- [Apresentação e defesa](./docs/apresentacao_defesa.md): roteiro para demonstração final.
 
 ## Executar o MVP em Python
 

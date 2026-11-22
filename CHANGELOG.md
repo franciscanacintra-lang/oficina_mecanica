@@ -60,3 +60,31 @@ O formato é baseado em Keep a Changelog e usa versionamento semântico.
 - Histórico de abertura, diagnóstico/reparo e conclusão.
 - Painel textual de consulta da OS.
 - Documentação inicial do requisito, arquitetura, README e UML.
+
+## [1.0-final] - 2026-11-22
+
+### Finalizado
+
+- Implementação demonstrativa em painel web e MVP Python.
+- Plano de testes com casos unitários, integração, sistema e aceitação.
+- Evidências unitárias aprovadas no fluxo de abertura e atualização da OS.
+- Registro de bugs encontrados e respectivas correções.
+- Atualização da documentação após correções.
+- Análise básica de dados sensíveis, autenticação, autorização, validações, segredos e riscos residuais.
+- Roteiro de apresentação e defesa do projeto.
+
+### Segurança e limitações
+
+- Dados pessoais não devem ser usados em demonstração real.
+- Não existe autenticação ou autorização por perfil.
+- Persistência limitada ao `localStorage` do navegador.
+- Não existe envio real de mensagens pelo WhatsApp.
+- Não existe banco relacional, backup ou API de produção.
+
+### Evidências
+
+- Testes unitários registrados em `tests/test_sistema_oficina.py`.
+- Plano em `docs/plano_testes.md`.
+- Segurança em `docs/analise_seguranca.md`.
+- Bugs em `docs/bugs_correcoes.md`.
+- Defesa em `docs/apresentacao_defesa.md`.
